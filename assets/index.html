@@ -1,0 +1,27 @@
+<!doctype html>
+<html ng-app="myApp">
+    <head>
+        <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+        <script src="js/main.js"></script>
+    </head>
+    <body>
+
+        <div id="sample">
+            test
+        </div>
+
+        <script>
+
+            $("#sample").css('cursor', 'pointer');
+            $("#sample").click(function(e) {
+                console.log("Click..." + e.target.innerHTML);
+                if (window.AndroidBridge) {
+                    window.AndroidBridge.test("My test variable...");
+                }
+            });
+
+            console.log("script worked...");
+
+        </script>
+    </body>
+</html>
